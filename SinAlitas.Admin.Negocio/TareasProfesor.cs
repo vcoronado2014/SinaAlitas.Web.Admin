@@ -260,10 +260,13 @@ namespace SinAlitas.Admin.Negocio
                             tarea1.PcoId = cupo.PcoId;
                             tarea1.TelefonoCliente = cliente.TelefonosContacto;
                             if (tarea1.FechaHoraTermino <= cstTime)
+                            {
                                 tarea1.ClaseVisible = "fa fa-2x fa-hand-o-right";
+                            }
                             else
+                            {
                                 tarea1.ClaseVisible = "fa fa-2x fa-hand-o-right hidden";
-
+                            }
                             if (prodCod != null && prodCod.Count == 1)
                                 tarea1.CodigoCliente = prodCod[0].CodigoCliente;
 
@@ -275,15 +278,22 @@ namespace SinAlitas.Admin.Negocio
                             {
                                 //no se debe mostrar la opcion de cancelar la hora
                                 tarea1.ClaseVisibleCancelar = "fa fa-2x fa-trash hidden";
+                                tarea1.ClaseVisibleReagendar = "fa fa-2x fa-calendar-o hidden";
                             }
                             else
                             {
                                 //el profesor puede cancelar una hora con la cliente 
                                 //con 4 horas de anticipacion
                                 if (tarea1.FechaHoraInicio.AddHours(4) > cstTime)
+                                {
                                     tarea1.ClaseVisibleCancelar = "fa fa-2x fa-trash";
+                                    tarea1.ClaseVisibleReagendar = "fa fa-2x fa-calendar-o";
+                                }
                                 else
+                                {
                                     tarea1.ClaseVisibleCancelar = "fa fa-2x fa-trash hidden";
+                                    tarea1.ClaseVisibleReagendar = "fa fa-2x fa-calendar-o hidden";
+                                }
                             }
                             tarea.TareasMostrar.Add(tarea1);
                         }

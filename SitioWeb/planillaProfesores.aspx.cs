@@ -510,33 +510,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(hoy).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaUno.Add(planilla);
             }
@@ -551,33 +555,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaDos).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaDos.Add(planilla);
             }
@@ -592,33 +600,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaTres).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaTres.Add(planilla);
             }
@@ -633,33 +645,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCuatro).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaCuatro.Add(planilla);
             }
@@ -674,33 +690,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaCinco).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaCinco.Add(planilla);
             }
@@ -715,33 +735,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSeis).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaSeis.Add(planilla);
             }
@@ -756,33 +780,37 @@ public partial class planillaProfesores : System.Web.UI.Page
                 planilla.IdProfesor = resul.Id;
                 planilla.NombreProfesor = resul.Nombres;
                 planilla.Fecha = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete);
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 10:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 09:00"))
                 {
                     planilla.SegmentoUno = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 11:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 10:15"))
                 {
                     planilla.SegmentoDos = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 12:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 11:30"))
                 {
                     planilla.SegmentoTres = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 14:45"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 13:00"))
                 {
                     planilla.SegmentoCuatro = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 16:00"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 14:15"))
                 {
                     planilla.SegmentoCinco = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 17:15"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 15:30"))
                 {
                     planilla.SegmentoSeis = resul.CodigoCliente;
                 }
-                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 18:30"))
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 16:45"))
                 {
                     planilla.SegmentoSiete = resul.CodigoCliente;
+                }
+                if (resul.FechaHoraInicio == Convert.ToDateTime(SinAlitas.Admin.Entidad.Utiles.RetornaFecha(diaSiete).ToShortDateString() + " 18:00"))
+                {
+                    planilla.SegmentoOcho = resul.CodigoCliente;
                 }
                 listaPlanillaSiete.Add(planilla);
             }
@@ -840,6 +868,9 @@ public partial class planillaProfesores : System.Web.UI.Page
 
                         SinAlitas.Admin.Entidad.PlanillaProfesor plan7 = fechitas.Find(p => p.SegmentoSiete != null);
                         detalle.SegmentoSiete = plan7 == null ? "" : plan7.SegmentoSiete;
+
+                        SinAlitas.Admin.Entidad.PlanillaProfesor plan8 = fechitas.Find(p => p.SegmentoOcho != null);
+                        detalle.SegmentoOcho = plan8 == null ? "" : plan8.SegmentoOcho;
 
                     }
 
@@ -915,14 +946,15 @@ public partial class planillaProfesores : System.Web.UI.Page
     {
         StringBuilder sb = new StringBuilder();
         sb.Append("<div class='col-xs-12 itemFechas'>");
-        sb.Append("<div class='col-xs-5'>Horarios</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>10:00-10:45</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>11:15-12:00</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>12:30-13:15</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>14:45-15:30</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>16:00-16:45</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>17:15-18:00</div>");
-        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>18:30-19:15</div>");
+        sb.Append("<div class='col-xs-4'>Horarios</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>09:00-09:45</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>10:15-11:00</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>11:30-12:15</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>13:00-13:45</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>14:15-15:00</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>15:30-16:15</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>16:45-17:30</div>");
+        sb.Append("<div class='col-xs-1 text-center font-muypequeno'>18:00-18:45</div>");
         sb.Append("</div>");
 
         return sb.ToString();
@@ -945,8 +977,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha uno
             DateTime fechaUnoDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaUno);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaUnoDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaUnoDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -954,7 +986,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 no-padding border-item-planilla itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1054,6 +1086,19 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+
                     }
                 }
                 sb.Append("</div>");
@@ -1063,8 +1108,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha dos
             DateTime fechaDosDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaDos);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaDosDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaDosDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1072,7 +1117,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1172,6 +1217,18 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
                     }
                 }
                 sb.Append("</div>");
@@ -1181,8 +1238,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha tres
             DateTime fechaTresDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaTres);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaTresDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaTresDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1190,7 +1247,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1290,6 +1347,19 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+
                     }
                 }
                 sb.Append("</div>");
@@ -1299,8 +1369,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha cuatro
             DateTime fechaCuatroDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaCuatro);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaCuatroDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaCuatroDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1308,7 +1378,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1408,6 +1478,19 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+
                     }
                 }
                 sb.Append("</div>");
@@ -1417,8 +1500,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha CINCO
             DateTime fechaCincoDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaCinco);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaCincoDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaCincoDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1426,7 +1509,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1526,6 +1609,19 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+
                     }
                 }
                 sb.Append("</div>");
@@ -1535,8 +1631,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha seis
             DateTime fechaSeisDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaSeis);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaSeisDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaSeisDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1544,7 +1640,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1644,6 +1740,18 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
                         }
 
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
+                        }
                     }
                 }
                 sb.Append("</div>");
@@ -1653,8 +1761,8 @@ public partial class planillaProfesores : System.Web.UI.Page
             #region fecha siete
             DateTime fechaSieteDate = SinAlitas.Admin.Entidad.Utiles.RetornaFecha(fechaSiete);
             sb.Append("<div class='col-xs-12 no-padding'>");
-            sb.Append("<div class='col-xs-5'></div>");
-            sb.AppendFormat("<div class='col-xs-7 text-center itemFecha'>{0}</div>", fechaSieteDate.ToShortDateString());
+            sb.Append("<div class='col-xs-4'></div>");
+            sb.AppendFormat("<div class='col-xs-8 text-center itemFecha'>{0}</div>", fechaSieteDate.ToShortDateString());
             sb.Append("</div>");
             sb.Append(ConstruyeLineasFechas());
 
@@ -1662,7 +1770,7 @@ public partial class planillaProfesores : System.Web.UI.Page
             {
 
                 sb.Append("<div class='col-xs-12 border-item-planilla no-padding itemProfesor'>");
-                sb.AppendFormat("<div class='col-xs-5'>{0}</div>", itm.NombreProfesor);
+                sb.AppendFormat("<div class='col-xs-4'>{0}</div>", itm.NombreProfesor);
                 if (itm.Detalle != null && itm.Detalle.Count > 0)
                 {
                     //cada detalle es un dia
@@ -1760,6 +1868,19 @@ public partial class planillaProfesores : System.Web.UI.Page
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoSiete);
                             else
                                 sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoSiete);
+                        }
+
+                        if (primerdia.SegmentoOcho == null || primerdia.SegmentoOcho == "")
+                        {
+                            primerdia.SegmentoOcho = "---";
+                            sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoAzul'>{0}</div>", primerdia.SegmentoOcho);
+                        }
+                        else
+                        {
+                            if (primerdia.SegmentoOcho == "Disponible")
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoVerde'>{0}</div>", primerdia.SegmentoOcho);
+                            else
+                                sb.AppendFormat("<div class='col-xs-1 text-center font-muypequeno fondoRojo'>{0}</div>", primerdia.SegmentoOcho);
                         }
 
                     }

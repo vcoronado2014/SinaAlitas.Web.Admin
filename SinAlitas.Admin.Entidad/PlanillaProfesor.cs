@@ -21,6 +21,7 @@ namespace SinAlitas.Admin.Entidad
         public string SegmentoCinco { get; set; }
         public string SegmentoSeis { get; set; }
         public string SegmentoSiete { get; set; }
+        public string SegmentoOcho { get; set; }
     }
     public class PlanillaProfesor
     {
@@ -34,6 +35,7 @@ namespace SinAlitas.Admin.Entidad
         public string SegmentoCinco { get; set; }
         public string SegmentoSeis { get; set; }
         public string SegmentoSiete { get; set; }
+        public string SegmentoOcho { get; set; }
     }
     public class ResultadosProfesor
     {

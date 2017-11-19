@@ -73,7 +73,7 @@
 
                         <dx:ASPxRadioButtonList ID="ASPxRadioButtonList1" runat="server" DataSourceID="odsListado" TextField="TextoMostrar" ValueField="Cupo.Id" Width="100%">
                         </dx:ASPxRadioButtonList>
-                        <asp:ObjectDataSource ID="odsListado" runat="server" SelectMethod="ListaProximosCuposDisponiblesDetalle" TypeName="SinAlitas.Admin.Negocio.Cupo">
+                        <asp:ObjectDataSource ID="odsListado" runat="server" SelectMethod="ListaProximosCuposDisponiblesDetalleSemana" TypeName="SinAlitas.Admin.Negocio.Cupo">
                             <SelectParameters>
                                 <asp:QueryStringParameter Name="nodId" QueryStringField="NOD_ID" Type="Int32" />
                                 <asp:QueryStringParameter Name="profId" QueryStringField="PROF_ID" Type="Int32" />

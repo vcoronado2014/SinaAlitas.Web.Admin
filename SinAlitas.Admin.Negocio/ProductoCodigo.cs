@@ -103,6 +103,29 @@ namespace SinAlitas.Admin.Negocio
 
             return lista2;
         }
+        public static List<SinAlitas.Admin.Entidad.ProductoCodigo> ObtenerProductosCodigoSinFiltroActivo()
+        {
+            Factory fac = new Factory();
+            FiltroGenerico filtro = new FiltroGenerico();
+            filtro.Campo = "ELIMINADO";
+            filtro.Valor = "0";
+            filtro.TipoDato = TipoDatoGeneral.Entero;
+
+
+            List<FiltroGenerico> filtros = new List<FiltroGenerico>();
+            filtros.Add(filtro);
+
+            List<object> lista = fac.Leer<SinAlitas.Admin.Entidad.ProductoCodigo>(filtros, setCnsWebLun);
+            List<SinAlitas.Admin.Entidad.ProductoCodigo> lista2 = new List<Entidad.ProductoCodigo>();
+            if (lista != null)
+            {
+
+                lista2 = lista.Cast<Entidad.ProductoCodigo>().ToList();
+            }
+
+            return lista2;
+        }
+
 
         public static int Pagar(int Id, string Texto, bool EstaPagado)
         {
@@ -465,7 +488,7 @@ namespace SinAlitas.Admin.Negocio
         public static int UltimoId()
         {
             int retorno = 1;
-            List<Entidad.ProductoCodigo> lista = ObtenerProductosCodigo();
+            List<Entidad.ProductoCodigo> lista = ObtenerProductosCodigoSinFiltroActivo();
             if (lista != null && lista.Count > 0)
                 retorno = lista.Max(p => p.Id) + 1;
             return retorno;

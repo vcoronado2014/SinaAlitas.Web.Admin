@@ -419,6 +419,24 @@ namespace SinAlitas.Admin.Negocio
 
             return lista2;
         }
+        public static List<Entidad.DetalleCupo> ListaProximosCuposDisponiblesDetalleSemana(int nodId, int profId, int cantidadCupos, int cupoIdReagendar)
+        {
+            List<Entidad.DetalleCupo> listaRetornar = new List<Entidad.DetalleCupo>();
+
+            List<SinAlitas.Admin.Entidad.Cupo> cupos = ListarProximosCuposDisponiblesSemana(nodId, profId, cantidadCupos, cupoIdReagendar);
+            if (cupos != null && cupos.Count > 0)
+            {
+                foreach (Entidad.Cupo cpo in cupos)
+                {
+                    Entidad.DetalleCupo detalle = new Entidad.DetalleCupo();
+                    detalle.Cupo = cpo;
+                    detalle.TextoMostrar = cpo.FechaHoraInicio.ToShortDateString() + " de " + cpo.FechaHoraInicio.ToString("t", CultureInfo.CreateSpecificCulture("es-CL")) + " a " + cpo.FechaHoraTermino.ToString("t", CultureInfo.CreateSpecificCulture("es-CL")) + " hrs.";
+                    listaRetornar.Add(detalle);
+                }
+            }
+
+            return listaRetornar;
+        }
         public static List<Entidad.DetalleCupo> ListaProximosCuposDisponiblesDetalle(int nodId, int profId, int cantidadCupos, int cupoIdReagendar)
         {
             List<Entidad.DetalleCupo> listaRetornar = new List<Entidad.DetalleCupo>();
@@ -505,6 +523,78 @@ namespace SinAlitas.Admin.Negocio
                     cantidadCupos = lista2.Count;
                 lista2 = lista2.GetRange(0, cantidadCupos);
             }
+
+            return lista2;
+        }
+
+        public static List<SinAlitas.Admin.Entidad.Cupo> ListarProximosCuposDisponiblesSemana(int nodId, int profId, int cantidadCupos, int cupoIdReagendar)
+        {
+
+            CultureInfo cultura = new CultureInfo("es-CL");
+            //en este caso de los clientes se muestran solo la cantidadCupos disponibles de los días siguientes
+
+            int cantidadDiasConsultar = 7;
+            Entidad.Cupo cupoReagendar = Negocio.Cupo.ObtenerCupoPorId(cupoIdReagendar);
+            //proecsamos la fecha
+            DateTime fechaProfesar = DateTime.MinValue;
+            if (cupoReagendar != null && cupoReagendar.Id > 0)
+                fechaProfesar = cupoReagendar.FechaHoraInicio.AddHours(3);
+
+
+            DateTime fechaInicio = fechaProfesar;
+            DateTime fechaTermino = Convert.ToDateTime(fechaInicio.ToShortDateString() + " 23:00").AddDays(cantidadDiasConsultar);
+            //se le agregan 30 días para revisar las tareas pendientes.
+            //fechaTermino = fechaTermino.AddDays(30);
+
+            Factory fac = new Factory();
+            FiltroGenerico filtro = new FiltroGenerico();
+            filtro.Campo = "ELIMINADO";
+            filtro.Valor = "0";
+            filtro.TipoDato = TipoDatoGeneral.Entero;
+
+            FiltroGenerico filtro1 = new FiltroGenerico();
+            filtro1.Campo = "ACTIVO";
+            filtro1.Valor = "1";
+            filtro1.TipoDato = TipoDatoGeneral.Entero;
+
+            FiltroGenerico filtro2 = new FiltroGenerico();
+            filtro2.Campo = "NOD_ID";
+            filtro2.Valor = nodId.ToString();
+            filtro2.TipoDato = TipoDatoGeneral.Entero;
+
+            FiltroGenerico filtro3 = new FiltroGenerico();
+            filtro3.Campo = "PROF_ID";
+            filtro3.Valor = profId.ToString();
+            filtro3.TipoDato = TipoDatoGeneral.Entero;
+
+            FiltroGenerico filtro4 = new FiltroGenerico();
+            filtro4.Campo = "PCO_ID";
+            filtro4.Valor = "0";
+            filtro4.TipoDato = TipoDatoGeneral.Entero;
+
+            List<FiltroGenerico> filtros = new List<FiltroGenerico>();
+            filtros.Add(filtro);
+            filtros.Add(filtro1);
+            filtros.Add(filtro2);
+            filtros.Add(filtro3);
+            filtros.Add(filtro4);
+
+            List<object> lista = fac.Leer<SinAlitas.Admin.Entidad.Cupo>(filtros, setCnsWebLun);
+            List<SinAlitas.Admin.Entidad.Cupo> lista2 = new List<Entidad.Cupo>();
+            if (lista != null)
+            {
+
+                lista2 = lista.Cast<Entidad.Cupo>().ToList();
+            }
+            if (lista2 != null && lista2.Count > 0)
+                lista2 = lista2.FindAll(p => p.FechaHoraInicio >= fechaInicio && p.FechaHoraTermino <= fechaTermino);
+
+            //if (lista2 != null && lista2.Count > 0)
+            //{
+            //    if (lista2.Count < cantidadCupos)
+            //        cantidadCupos = lista2.Count;
+            //    lista2 = lista2.GetRange(0, cantidadCupos);
+            //}
 
             return lista2;
         }

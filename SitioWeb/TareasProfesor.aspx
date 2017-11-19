@@ -100,6 +100,11 @@
             //popupCerrarClase.SetContentUrl(url);
             //popupCerrarClase.Show();
         }
+        function Reagendar(idNodo, idProfesor, pcoId, id, clieId) {
+            var url = "MostrarOchoDias.aspx?NOD_ID=" + idNodo + "&PROF_ID=" + idProfesor + "&PCO_ID=" + pcoId + "&CUPO_ID_REAGENDAR=" + id + "&CLIE_ID=" + clieId;
+            popupReagendar.SetContentUrl(url);
+            popupReagendar.Show();
+        }
     </script>
 
 </head>
@@ -201,11 +206,21 @@
                                                             </i>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-4 no-padding">
+<%--                                                    <div class="col-xs-3 no-padding">
                                                         <div class="col-xs-12 text-center no-padding">
                                                             <i class='<%# Eval("ClaseVisibleCancelar", "{0}")%>' onclick="CancelarClase('<%# Eval("NombreCliente", "{0}")%>', '<%# Eval("Id", "{0}")%>')">
                                                                 <div class="col-xs-12 text-center font-muypequeno no-padding">
                                                                     <span style="font-size: 10pt; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cancelar Clase</span>
+                                                                </div>
+                                                            </i>
+                                                        </div>
+                                                            
+                                                    </div>--%>
+                                                    <div class="col-xs-4 no-padding">
+                                                        <div class="col-xs-12 text-center no-padding">
+                                                            <i class='<%# Eval("ClaseVisibleReagendar", "{0}")%>' onclick="Reagendar('<%# Eval("NodId", "{0}")%>', '<%# Eval("ProfId", "{0}")%>', '<%# Eval("PcoId", "{0}")%>', '<%# Eval("Id", "{0}")%>', '<%# Eval("ClieId", "{0}")%>')">
+                                                                <div class="col-xs-12 text-center font-muypequeno no-padding">
+                                                                    <span style="font-size: 10pt; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Reagendar Clase</span>
                                                                 </div>
                                                             </i>
                                                         </div>
@@ -242,6 +257,21 @@
                                 </dx:PopupControlContentControl>
                             </ContentCollection>
                         </dx:ASPxPopupControl>
+
+                     <!-- popup reagendar -->
+
+                    <dx:ASPxPopupControl ID="popupReagendar" ClientInstanceName="popupReagendar" Width="320px" runat="server" MaxWidth="100%" PopupAction="None" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Theme="Mulberry" HeaderText="Acción" MinWidth="90%" Modal="True" Style="min-width: 320px; max-width: 90%; min-width: 320px; min-height: 400px;">
+                        <ClientSideEvents CloseUp="function(s, e) {
+	ActualizarPagina();
+}" />
+                        <ContentStyle>
+                            <Paddings Padding="0px" />
+                        </ContentStyle>
+                        <ContentCollection>
+                            <dx:PopupControlContentControl runat="server">
+                            </dx:PopupControlContentControl>
+                        </ContentCollection>
+                    </dx:ASPxPopupControl>
 
                     </dx:PanelContent>
                 </PanelCollection>

@@ -17,6 +17,7 @@ namespace SinAlitas.Admin.Entidad
         public int IdPopup { get; set; }
         public string ClaseVisible { get; set; }
         public string ClaseVisibleCancelar { get; set; }
+        public string ClaseVisibleReagendar { get; set; }
 
         public string CodigoCliente { get; set; }
         public string TelefonoCliente { get; set; }

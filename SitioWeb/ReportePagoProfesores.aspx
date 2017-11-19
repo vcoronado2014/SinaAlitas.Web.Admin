@@ -255,6 +255,11 @@
                                         <dx:ListEditItem Text="6" Value="6" />
                                         <dx:ListEditItem Text="7" Value="7" />
                                         <dx:ListEditItem Text="8" Value="8" />
+                                        <dx:ListEditItem Text="9" Value="9" />
+                                        <dx:ListEditItem Text="10" Value="10" />
+                                        <dx:ListEditItem Text="11" Value="11" />
+                                        <dx:ListEditItem Text="12" Value="12" />
+                                        <dx:ListEditItem Text="13" Value="13" />
                                     </Items>
                                 </dx:ASPxComboBox>
                             </div>
