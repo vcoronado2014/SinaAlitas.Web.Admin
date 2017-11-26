@@ -162,7 +162,7 @@
                             </div>
                             <div class="col-xs-10 titulo-header">
                                 <h3>Selección</h3>
-                                <h5>Profesores de la Comuna</h5>
+                                <h5>Profesores de la Comuna <asp:Literal ID="litComunaCliente" runat="server"></asp:Literal></h5>
                             </div>
                             
                         </div>
@@ -179,7 +179,7 @@
                             <section style="margin-top: 4em;">
                                 <asp:HiddenField ID="hidPCO_ID" runat="server" />
                                 <div class="col-xs-12 no-padding" id ="accordion">
-                                    <asp:Repeater ID="rptCupos" runat="server">
+                                    <asp:Repeater ID="rptCupos" runat="server" OnItemDataBound="rptCupos_ItemDataBound">
                                         <ItemTemplate>
 
                                      <div class="col-xs-12 bd-gray no-padding border-bottom-item"" style="min-height:77px;">
@@ -190,7 +190,13 @@
                                             <div class="col-xs-12 font-mediano fg-tratamiento"><%# Eval("Profesor.Nombres", "{0}")%> <%# Eval("Profesor.PrimerApellido", "{0}")%> <%# Eval("Profesor.SegundoApellido", "{0}")%></div>
                                             <%--<div class="col-xs-12 font-pequeno"><span class="fa fa-envelope"> </span><span> <%# Eval("Profesor.Email", "{0}")%></span></div>--%>
                                             <div class="col-xs-12 font-pequeno"><span class="fa fa-phone"> </span><span> <%# Eval("Profesor.TelefonosContacto", "{0}")%></span></div>
-                                
+                                            <div class="col-xs-12 font-pequeno"><strong><span class="fa fa-info-circle"> </span> Comunas: <span> <%# Eval("Comunas", "{0}")%></span></strong></div>
+                                            <asp:Repeater ID="rptAgenda" runat="server">
+                                                <ItemTemplate>
+                                                    <div class="col-xs-12 font-pequeno"><strong><span class="fa fa-calendar"> </span><span> <%# Eval("SemanaString", "{0}")%>, cupos: <%# Eval("DiasDisponibles", "{0}")%></span></strong></div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            
                                         </div>
                                         <div class="col-xs-2 text-center pull-right fg-white bg-primary">
                                             <div class="huge"><%# Eval("EstrellasProfesor", "{0}")%>

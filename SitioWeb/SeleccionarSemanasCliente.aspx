@@ -249,13 +249,17 @@
                     </asp:Repeater>
 
                     <div class="col-xs-12">
+                        <dx:ASPxButton ID="btnCancelarTodo" runat="server" Text="Cancelar las Pendientes" Width="100%" Native="true" CssClass="btn btn-warning" OnClick="btnCancelarTodo_Click" Visible="False">
+                                    </dx:ASPxButton>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a data-toggle="collapse" id="accordion" href="#panel2">Ver Mis clases Agendadas</a> <i class="fa fa-calendar-check-o pull-right"></i>
 
                             </div>
                             <div class="panel-body collapse" data-toggle="collapse" data-parent="#accordion" id="panel2">
+                                
                                 <div class="list-group">
+                                    
                                     <!-- acá el contenido del repeat -->
                                     <asp:Repeater ID="rptClasesAgendadas" runat="server">
                                         <ItemTemplate>

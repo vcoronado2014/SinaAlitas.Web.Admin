@@ -118,7 +118,7 @@ namespace SinAlitas.Admin.Negocio
         public static List<Entidad.EnvoltorioProfesorCupo> ListaProfesoresYCupos(int idComuna, int pcoId)
         {
             //por defecto consulta desde 23 horas más hasta 30 días en adelante
-
+            
             List<Entidad.EnvoltorioProfesorCupo> listaRetornar = new List<Entidad.EnvoltorioProfesorCupo>();
             int idProfe = 0;
             //comenzamos buscando a los profesores de la comuna
@@ -146,12 +146,13 @@ namespace SinAlitas.Admin.Negocio
                 int contadorF = 0;
                 foreach (Entidad.Profesor profe in profesores)
                 {
-                    
+                    StringBuilder comunasAsignadas = new StringBuilder();
                     bool agrega = false;
                     if (profe.ComIdAsignada == "*")
                     {
                         //califica de inmediato
                         agrega = true;
+                        comunasAsignadas.Append("Todas");
                     }
                     else
                     {
@@ -159,12 +160,27 @@ namespace SinAlitas.Admin.Negocio
                         if (ids != null && ids.Length > 0)
                             if (ids.Contains(idComuna.ToString()))
                                 agrega = true;
+                        //ahora agregamos las comunas a las que pertenece el Profesor
+                        if (ids != null && ids.Length > 0)
+                        {
+                            foreach(string c in ids.ToList())
+                            {
+                                Entidad.Comuna comunaA = SinAlitas.Admin.Negocio.Territorio.ObtenerComunanPorId(int.Parse(c));
+                                if (comunaA != null && comunaA.Id > 0)
+                                {
+                                    comunasAsignadas.Append(comunaA.Nombre);
+                                    comunasAsignadas.Append(", ");
+
+                                }
+                            }
+                        }
 
                     }
 
                     if (agrega)
                     {
                         StringBuilder sbInfo = new StringBuilder();
+                        StringBuilder sbSemanas = new StringBuilder();
                         Entidad.EnvoltorioProfesorCupo entidad = new Entidad.EnvoltorioProfesorCupo();
                         entidad.Profesor = profe;
                         //buscamos los cupos ya tomados
@@ -181,6 +197,28 @@ namespace SinAlitas.Admin.Negocio
                         entidad.IdControl = "ASPxCallbackPanel1_rptCupos_dtFecha_" + contadorF.ToString() + "_I";
                         //buscamos los cupos disponibles
                         entidad.CuposProfesor = Negocio.Cupo.ListarCuposParaClientes(profe.NodId, profe.Id);
+                        //tratemos de ordenar en semanas los cupos consultados.
+                        //seria algo asi
+                        //semana 1 del 12-12-2017 al 19-12-2017 40 cupos, semana 2 del 12-12-2017 al 19-12-2017 40 cupos
+                        if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
+                        {
+                            DateTime primeraFecha = entidad.CuposProfesor.Min(p => p.FechaHoraInicio);
+                            List<Entidad.Semanas> semanas =  SinAlitas.Admin.Entidad.Utiles.RetornaSemanas(primeraFecha);
+                            foreach (SinAlitas.Admin.Entidad.Semanas semana in semanas)
+                            {
+                                semana.DiasDisponibles = entidad.CuposProfesor.FindAll(p => p.FechaHoraInicio >= semana.FechaInicioSemana && p.FechaHoraTermino <= semana.FechaTerminoSemana && p.ClieId == 0).Count();
+
+                            }
+                            
+                            entidad.SemanasArr = semanas;
+
+                        }
+                        else
+                        {
+                            sbSemanas.Append("No tiene cupos disponibles");
+                        }
+
+
                         entidad.CuposMostrar = new List<Entidad.CupoMostrarProfesor>();
                         if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
                         {
@@ -239,6 +277,17 @@ namespace SinAlitas.Admin.Negocio
 
                         entidad.EstrellasProfesor = EntregaEstrellas(profe.Id);
                         entidad.CantidadVotos = 0;
+                        //agregamos las comunas
+                        if (comunasAsignadas.ToString() != "Todas")
+                        {
+                            //le quitamos los ultimos caracteres
+                            string reparada = comunasAsignadas.ToString().Remove(comunasAsignadas.ToString().Length - 2, 2);
+                            entidad.Comunas = reparada;
+                        }
+                        else
+                            entidad.Comunas = comunasAsignadas.ToString();
+                        //agregamos las semanas
+                        entidad.Semanas = sbSemanas.ToString();
                         listaRetornar.Add(entidad);
                         contadorF++;
 

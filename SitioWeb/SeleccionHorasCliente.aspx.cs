@@ -28,9 +28,16 @@ public partial class SeleccionHorasCliente : System.Web.UI.Page
                         }
                     }
                     hidPCO_ID.Value = pcoId.ToString();
+                    SinAlitas.Admin.Entidad.Comuna comunaCliente = SinAlitas.Admin.Negocio.Territorio.ObtenerComunanPorId(envoltorio.Comuna.Id);
+                    if (comunaCliente != null && comunaCliente.Id > 0)
+                    {
+                        litComunaCliente.Text = comunaCliente.Nombre;
+                    }
                     List<SinAlitas.Admin.Entidad.EnvoltorioProfesorCupo> cuposProfesor = SinAlitas.Admin.Negocio.EnvoltorioProfesorCupo.ListaProfesoresYCupos(envoltorio.Comuna.Id, pcoId);
                     rptCupos.DataSource = cuposProfesor;
                     rptCupos.DataBind();
+
+                    
                 }
                 else
                 {
@@ -88,5 +95,18 @@ public partial class SeleccionHorasCliente : System.Web.UI.Page
     {
 
         Response.Redirect("~/buscarpack.aspx");
+    }
+
+    protected void rptCupos_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        var data2 = ((SinAlitas.Admin.Entidad.EnvoltorioProfesorCupo)e.Item.DataItem).SemanasArr;
+        //var listBoxCupos = ((DevExpress.Web.ASPxListBox)e.Item.DataItem);
+        var rpt = (Repeater)e.Item.FindControl("rptAgenda");
+        if (rpt != null)
+        {
+            rpt.DataSource = data2;
+            rpt.DataBind();
+
+        }
     }
 }

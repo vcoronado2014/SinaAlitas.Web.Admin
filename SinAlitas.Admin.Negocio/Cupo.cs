@@ -281,7 +281,7 @@ namespace SinAlitas.Admin.Negocio
             CultureInfo cultura = new CultureInfo("es-CL");
             //en este caso de los clientes se muestran solo los 7 días siguientes
 
-            int cantidadDiasConsultar = 6;
+            int cantidadDiasConsultar = 60;
             //proecsamos la fecha
             DateTime fechaProfesar = DateTime.Now.AddHours(23);
             DateTime fechaInicio = Convert.ToDateTime(fechaProfesar.ToShortDateString() + " 06:00");

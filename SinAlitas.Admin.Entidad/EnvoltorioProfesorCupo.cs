@@ -22,6 +22,9 @@ namespace SinAlitas.Admin.Entidad
         public string IdControl { get; set; }
 
         public List<CupoMostrarProfesor> CuposMostrar { get; set; }
+        public string Comunas { get; set; }
+        public string Semanas { get; set; }
+        public List<Entidad.Semanas> SemanasArr { get; set; }
     }
     public class CupoMostrarProfesor
     {

@@ -201,4 +201,27 @@ public partial class SeleccionarSemanasCliente : System.Web.UI.Page
         else
             Response.Redirect("~/SeleccionHorasCliente.aspx?PCO_ID=" + pcoId.ToString());
     }
+
+    protected void btnCancelarTodo_Click(object sender, EventArgs e)
+    {
+        int pcoId = int.Parse(Request.QueryString["PCO_ID"]);
+        SinAlitas.Admin.Entidad.EnvoltorioClientePackProducto envoltorio = SinAlitas.Admin.Negocio.EnvoltorioClientePackProducto.Obtener(pcoId);
+        if (envoltorio.CuposTomados != null && envoltorio.CuposTomados.Count > 0)
+        {
+            foreach(SinAlitas.Admin.Entidad.Cupo cpo in envoltorio.CuposTomados)
+            {
+                SinAlitas.Admin.Entidad.Cupo cupo = SinAlitas.Admin.Negocio.Cupo.ObtenerCupoPorId(cpo.Id);
+                //if (cpo.EstadoCupo != )
+                SinAlitas.Admin.Entidad.CancelacionClase obs = new SinAlitas.Admin.Entidad.CancelacionClase();
+                obs.CpoId = cupo.Id;
+                obs.FechaCancelacion = DateTime.Now;
+                obs.Motivo = "Cancelación Masiva";
+                obs.PcoId = cupo.PcoId;
+                obs.ProfId = cupo.ProfId;
+
+            }
+            
+        }
+        
+    }
 }

@@ -36,7 +36,7 @@ namespace SinAlitas.Admin.Entidad
             //vamos a entregar máximo 4 semanas
             //la fecha de inicio no se agregará 23 horas
             //fechaInicio = fechaInicio.AddHours(23);
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 8; i++)
             {
                 int suma = i + 1;
                 //DateTime fechaIniSemnana = fechaInicio;
