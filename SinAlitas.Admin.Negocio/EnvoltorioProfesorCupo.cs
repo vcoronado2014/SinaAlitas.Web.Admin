@@ -49,7 +49,7 @@ namespace SinAlitas.Admin.Negocio
                         if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
                         {
                             //el profesor debe tener al menos 7 días disponibles
-                            if (entidad.CuposProfesor.Count < 7)
+                            if (entidad.CuposProfesor.Count < 1)
                             {
                                 break;
                             }
@@ -165,12 +165,15 @@ namespace SinAlitas.Admin.Negocio
                         {
                             foreach(string c in ids.ToList())
                             {
-                                Entidad.Comuna comunaA = SinAlitas.Admin.Negocio.Territorio.ObtenerComunanPorId(int.Parse(c));
-                                if (comunaA != null && comunaA.Id > 0)
+                                if (c != "")
                                 {
-                                    comunasAsignadas.Append(comunaA.Nombre);
-                                    comunasAsignadas.Append(", ");
+                                    Entidad.Comuna comunaA = SinAlitas.Admin.Negocio.Territorio.ObtenerComunanPorId(int.Parse(c));
+                                    if (comunaA != null && comunaA.Id > 0)
+                                    {
+                                        comunasAsignadas.Append(comunaA.Nombre);
+                                        comunasAsignadas.Append(", ");
 
+                                    }
                                 }
                             }
                         }
@@ -223,7 +226,7 @@ namespace SinAlitas.Admin.Negocio
                         if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
                         {
                             //el profesor debe tener al menos 7 días disponibles
-                            if (entidad.CuposProfesor.Count < 7)
+                            if (entidad.CuposProfesor.Count < 1)
                             {
                                 break;
                             }
@@ -325,7 +328,7 @@ namespace SinAlitas.Admin.Negocio
                         if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
                         {
                             //el profesor debe tener al menos 7 días disponibles
-                            if (entidad.CuposProfesor.Count < 7)
+                            if (entidad.CuposProfesor.Count < 1)
                             {
                                 break;
                             }
@@ -449,7 +452,7 @@ namespace SinAlitas.Admin.Negocio
                         if (entidad.CuposProfesor != null && entidad.CuposProfesor.Count > 0)
                         {
                             //el profesor debe tener al menos 7 días disponibles
-                            if (entidad.CuposProfesor.Count < 7)
+                            if (entidad.CuposProfesor.Count < 1)
                             {
                                 break;
                             }

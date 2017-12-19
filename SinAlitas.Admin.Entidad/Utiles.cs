@@ -92,7 +92,7 @@ namespace SinAlitas.Admin.Entidad
 
             DateTime ahora = DateTime.Now;
             DateTime inicio = Convert.ToDateTime("01-" + RetornaMesDia(ahora.Month) +"-"+ ahora.Year.ToString()).AddMonths(-1);
-            DateTime termino = Convert.ToDateTime("01-" + RetornaMesDia(ahora.Month) +"-"+ ahora.Year.ToString()).AddMonths(2);
+            DateTime termino = Convert.ToDateTime("01-" + RetornaMesDia(ahora.Month) +"-"+ ahora.Year.ToString()).AddMonths(3);
 
             int contador = -1;
             int difMeses = Math.Abs((termino.Month - inicio.Month) + 12 * (termino.Year - inicio.Year));

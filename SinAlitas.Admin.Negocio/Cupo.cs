@@ -533,13 +533,13 @@ namespace SinAlitas.Admin.Negocio
             CultureInfo cultura = new CultureInfo("es-CL");
             //en este caso de los clientes se muestran solo la cantidadCupos disponibles de los días siguientes
 
-            int cantidadDiasConsultar = 7;
+            int cantidadDiasConsultar = 60;
             Entidad.Cupo cupoReagendar = Negocio.Cupo.ObtenerCupoPorId(cupoIdReagendar);
             //proecsamos la fecha
             DateTime fechaProfesar = DateTime.MinValue;
             if (cupoReagendar != null && cupoReagendar.Id > 0)
-                fechaProfesar = cupoReagendar.FechaHoraInicio.AddHours(3);
-
+                //fechaProfesar = cupoReagendar.FechaHoraInicio.AddHours(3);
+                fechaProfesar = DateTime.Now.AddHours(2);
 
             DateTime fechaInicio = fechaProfesar;
             DateTime fechaTermino = Convert.ToDateTime(fechaInicio.ToShortDateString() + " 23:00").AddDays(cantidadDiasConsultar);

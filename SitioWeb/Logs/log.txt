@@ -120,4 +120,9 @@
     <Detalle>Subproceso anulado.</Detalle>
     <Id>23</Id>
   </error>
+  <error>
+    <Fecha>2017-12-13 22:06</Fecha>
+    <Detalle>Subproceso anulado.</Detalle>
+    <Id>24</Id>
+  </error>
 </root>
