@@ -14,3 +14,11 @@ C:\SinAlitas.Admin.Web\SinAlitas.Admin.Negocio\bin\Debug\SinAlitas.Admin.Entidad
 C:\SinAlitas.Admin.Web\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.csprojResolveAssemblyReference.cache
 C:\SinAlitas.Admin.Web\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.dll
 C:\SinAlitas.Admin.Web\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.pdb
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\bin\Debug\SinAlitas.Admin.Negocio.dll
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\bin\Debug\SinAlitas.Admin.Negocio.pdb
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\bin\Debug\SinAlitas.Admin.Entidad.dll
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\bin\Debug\VCFramework.Negocio.Factory.dll
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\bin\Debug\SinAlitas.Admin.Entidad.pdb
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.csprojResolveAssemblyReference.cache
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.dll
+D:\SinaAlitas.Web.Admin\SinAlitas.Admin.Negocio\obj\Debug\SinAlitas.Admin.Negocio.pdb
